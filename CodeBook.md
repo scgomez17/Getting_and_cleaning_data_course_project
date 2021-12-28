@@ -5,9 +5,6 @@ date: "28 de diciembre de 2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Getting and Cleaning Data Course Project
 
@@ -19,26 +16,36 @@ The `run_analysis.R` script performs the pre-processing and the 5 preparation st
 
 -`features` <- `features.txt`
 Raw signal from the accelerometer and gyroscope
+
 -`activities` <- `activity_labels.txt`
 List of activities performed
+
 -`subject_test` <- `subject_test.txt`
 Test data of volunteer test subjects
+
 -`x_test` <- `X_test.txt`
 Recorded signal of test data
+
 -`y_test` <- `y_test.txt`
 Test data labels
+
 -`subject_train` <- `subject_train.txt`
 Train data of volunteer train subjects
+
 -`x_train` <- `X_train.txt`
 Recorded signals of train data
+
 -`y_train` <- `y_train.txt`
 Train data labels
 
 3. Training and test sets were merged to create one dataset
 
 -`features_data` (10299 obs. of 561 vars) <- `x_train` combined (`rbind`) with `x_test`
+
 -`activitt_data` (10299 obs. of 1 var) <- `y_train` combined (`rbind`) with `y_test`
+
 -`subject_data` (10299 obs. of 1 var) <- `subject_train` combined (`rbind`) with `subject_test`
+
 -`tidy_dataset` (10299 obs. of 563 vars) <- `subject_data`, `activity_data` and `features_data` are combined (`cbind`)
 
 4. Only the measurements on the mean and standard deviation for each measurement are extracted
@@ -52,10 +59,15 @@ Train data labels
 6. Appropriately labels the dataset with descriptive variable names
 
 -All start with character `t` is replaced by `Time`
+
 -All start with character `f` is replaced by `Frequency`
+
 -`Acc` is replaced by `Accelerometer`
+
 -`Gyro` is replaced by `Gyroscope`
+
 -`BodyBody` is replaced by `Body`
+
 -`Mag` is replaced by `Magnitude`
 
 7. An independent tidy dataset is created with the average of each variable for each activity and subject
